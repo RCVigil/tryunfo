@@ -39,7 +39,7 @@ class Form extends Component {
 
           <input type="checkbox" name="" id="" data-testid="trunfo-input" />
 
-          <button type data-testid="save-button">
+          <button type="submit" data-testid="save-button">
             Salvar
           </button>
 
