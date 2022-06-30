@@ -16,10 +16,12 @@ class Form extends Component {
       onInputChange,
       onSaveButtonClick,
     } = this.props;
+
     return (
       <div>
-        <form action="">
+        <form>
           <input
+            name="cardName"
             type="text"
             data-testid="name-input"
             value={ cardName }
@@ -27,7 +29,7 @@ class Form extends Component {
           />
 
           <textarea
-            name=""
+            name="cardDescription"
             id="letter-description"
             cols="30"
             rows="10"
@@ -37,6 +39,7 @@ class Form extends Component {
           />
 
           <input
+            name="cardAttr1"
             type="number"
             data-testid="attr1-input"
             value={ cardAttr1 }
@@ -44,6 +47,7 @@ class Form extends Component {
           />
 
           <input
+            name="cardAttr2"
             type="number"
             data-testid="attr2-input"
             value={ cardAttr2 }
@@ -51,6 +55,7 @@ class Form extends Component {
           />
 
           <input
+            name="cardAttr3"
             type="number"
             data-testid="attr3-input"
             value={ cardAttr3 }
@@ -58,6 +63,7 @@ class Form extends Component {
           />
 
           <input
+            name="cardImage"
             type="text"
             data-testid="image-input"
             value={ cardImage }
@@ -65,20 +71,38 @@ class Form extends Component {
           />
 
           <select
-            name=""
+            name="cardRare"
             id=""
             data-testid="rare-input"
             value={ cardRare }
             onChange={ onInputChange }
           >
-            <option value="normal">normal</option>
-            <option value="raro">raro</option>
-            <option value="muito raro">muito raro</option>
+            <option
+              name="normal"
+              value="normal"
+            >
+              normal
+
+            </option>
+            <option
+              name="raro"
+              value="raro"
+            >
+              raro
+
+            </option>
+            <option
+              name="muito raro"
+              value="muito raro"
+            >
+              muito raro
+
+            </option>
           </select>
 
           <input
             type="checkbox"
-            name=""
+            name="cardTrunfo"
             id=""
             data-testid="trunfo-input"
             checked={ cardTrunfo }
