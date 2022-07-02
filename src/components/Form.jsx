@@ -12,6 +12,7 @@ class Form extends Component {
       cardImage,
       cardRare,
       cardTrunfo,
+      hasTrunfo,
       isSaveButtonDisabled,
       onInputChange,
       onSaveButtonClick,
@@ -103,7 +104,7 @@ class Form extends Component {
           <input
             type="checkbox"
             name="cardTrunfo"
-            id=""
+            id="trunfo"
             data-testid="trunfo-input"
             checked={ cardTrunfo }
             onChange={ onInputChange }
@@ -132,8 +133,9 @@ Form.propTypes = {
   cardAttr3: PropTypes.string,
   cardImage: PropTypes.string,
   cardRare: PropTypes.string,
-  cardTrunfo: PropTypes.bool,
-  isSaveButtonDisabled: PropTypes.bool,
+  cardTrunfo: PropTypes.boolean,
+  hasTrunfo: PropTypes.func,
+  isSaveButtonDisabled: PropTypes.boolean,
   onInputChange: PropTypes.func,
   onSaveButtonClick: PropTypes.func,
 

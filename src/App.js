@@ -14,18 +14,22 @@ class App extends React.Component {
       cardImage: '',
       cardRare: 'normal',
       cardTrunfo: false,
+      isSaveButtonDisabled: true,
     };
   }
 
   onInputChange = ({ target }) => {
-    const { name } = target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const { name, type, checked, value } = target;
 
-    console.log(value);
+    this.setState({ [name]: type === 'checkbox' ? checked : value });
 
-    this.setState({
-      [name]: value,
-    });
+    if (value !== '') {
+      this.setState({ isSaveButtonDisabled: false });
+    }
+    const numero = 90;
+    if (value > numero || value < numero) {
+      this.setState({ isSaveButtonDisabled: true });
+    }
   }
 
   render() {
@@ -38,6 +42,7 @@ class App extends React.Component {
       cardImage,
       cardRare,
       cardTrunfo,
+      isSaveButtonDisabled,
     } = this.state;
 
     return (
@@ -53,6 +58,7 @@ class App extends React.Component {
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
           onInputChange={ this.onInputChange }
+          isSaveButtonDisabled={ isSaveButtonDisabled }
         />
         <Card
           cardName={ cardName }
