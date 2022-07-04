@@ -3,8 +3,8 @@ import Card from './components/Card';
 import Form from './components/Form';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       cardName: '',
       cardDescription: '',
@@ -13,6 +13,7 @@ class App extends React.Component {
       cardAttr3: '',
       cardImage: '',
       cardRare: '',
+      hasTrunfo: false,
       cardTrunfo: false,
       isSaveButtonDisabled: true,
       novoEstado: [],
@@ -35,7 +36,8 @@ class App extends React.Component {
 
   onSaveButtonClick = (event) => {
     event.preventDefault();
-    const novoEstado = this.state;
+    const estado = this.state;
+
     this.setState((prevewState) => ({
       cardName: '',
       cardDescription: '',
@@ -47,6 +49,12 @@ class App extends React.Component {
       cardTrunfo: false,
       novoEstado: [...prevewState.novoEstado, novoEstado],
     }));
+
+    if (estado.cardTrunfo === true) {
+      this.setState({
+        hasTrunfo: true,
+      });
+    }
   }
 
   render() {
@@ -59,6 +67,7 @@ class App extends React.Component {
       cardImage,
       cardRare,
       cardTrunfo,
+      hasTrunfo,
       isSaveButtonDisabled,
     } = this.state;
 
@@ -77,6 +86,7 @@ class App extends React.Component {
           onInputChange={ this.onInputChange }
           isSaveButtonDisabled={ isSaveButtonDisabled }
           onSaveButtonClick={ this.onSaveButtonClick }
+          hasTrunfo={ hasTrunfo }
         />
         <Card
           cardName={ cardName }
