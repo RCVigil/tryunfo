@@ -47,7 +47,7 @@ class App extends React.Component {
       cardImage: '',
       cardRare: '',
       cardTrunfo: false,
-      novoEstado: [...prevewState.novoEstado, novoEstado],
+      novoEstado: [...prevewState.novoEstado, estado],
     }));
 
     if (estado.cardTrunfo === true) {
@@ -69,6 +69,7 @@ class App extends React.Component {
       cardTrunfo,
       hasTrunfo,
       isSaveButtonDisabled,
+      novoEstado,
     } = this.state;
 
     return (
@@ -98,6 +99,9 @@ class App extends React.Component {
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
         />
+        <div>
+          {novoEstado.map((carta) => <Card { ...carta } key={ carta.cardName } />)}
+        </div>
       </div>
     );
   }
