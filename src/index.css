@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.divCart {
+  border: 4px solid rgba(255, 255, 0, 0.488);
+  border-radius: 10px;
+}

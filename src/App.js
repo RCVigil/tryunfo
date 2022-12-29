@@ -99,7 +99,7 @@ class App extends React.Component {
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
         />
-        <div>
+        <div className="divCart">
           {novoEstado.map((carta) => <Card { ...carta } key={ carta.cardName } />)}
         </div>
       </div>
